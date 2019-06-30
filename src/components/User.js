@@ -29,10 +29,21 @@ const User = props => (
       <i>website: </i>
       <a href="#"> www.{props.user.website}</a>
       <br />
-      <i>USER_ID:</i> {props.user.id}
       <br />
       <br />
       <br />
+      <br />
+      <i>USER_ID:</i> {props.user.id} 
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <h3> </h3>
+      <br />
+
     </td>
   </tr>
 );

@@ -14,13 +14,6 @@ const TodoList = () => {
   const todoComponents = todosData.map(item => 
   <TodoItem key={item.userId} todos={item} />);
   
-  // const filteredTodos = todoComponents.filter(
-  //   e => e.userId === 2
-  // );
-
-  // console.log(userComponents);
-  // console.log(todoComponents.filter(e=> e.userId === 2));
-  
   return (
     <table>
       <th>NAMES</th>
@@ -34,3 +27,33 @@ const TodoList = () => {
 }
 
 export default TodoList;
+
+
+
+// function TodoList() {
+//   const list = todosData.map(todo =>
+//     usersData.map(item => {
+//       if (item.id === todo.userId) {
+//         return (
+//           <table className="todo-list-item">
+//           <th>NAME</th>
+//           <th>TODO</th>
+
+//             <tr>
+//               <User key={item.id} user={item} />
+//               <td>
+//                 {" "}
+//                 <TodoItem key={todo.userId} todos={item} />
+//               </td>
+//             </tr>
+//           </table>
+//         );
+//       }
+//     })
+//   );
+
+//   return <div>{list}</div>;
+// }
+
+
+
