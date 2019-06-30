@@ -1,0 +1,11 @@
+table {
+  background:  radial-gradient(farthest-corner at 50% 50%, white, #DCECF8);
+}
+
+th {
+  border: 1px solid #A9E2CC;
+}
+
+td {
+  border: 1px solid #A9E2CC;
+}
