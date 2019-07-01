@@ -1,51 +1,62 @@
 import React from 'react';
 
-const User = props => (
-  <tr>
-    <td>
-      <h2>{props.user.name} <br /></h2>
-      
-      <i>Company:</i> <b>"{props.user.company.name}"</b>
-      <br />
+import TodoItem from "./TodoItem";
 
-      <span>
-        <i>Address:</i> {props.user.address.city},
-        <br />
-        {props.user.address.street}, {props.user.address.suite}. <br />
-        zipcode: {props.user.address.zipcode}
-      </span>
-      <br />
-      <br />
-      
-      <i> username: <b>{props.user.username}</b> </i>
-      <br />
+import todosData from "../data/todos";
 
-      <i>e-mail:</i> <u>{props.user.email}</u>
-      <br />
 
-      <i>phone:</i> {props.user.phone}
-      <br />
+const User = props => {
 
-      <i>website: </i>
-      <a href="#"> www.{props.user.website}</a>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <i>USER_ID:</i> {props.user.id} 
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <h3> </h3>
-      <br />
+  const todoComponents = todosData.map(
+    task => <TodoItem key={task.userId} todos={task}/>
+  );
 
-    </td>
-  </tr>
-);
+  const personatedTasks = todoComponents
+    .map(task =>task = task.props.todos)
+    .filter(task => task.userId === props.user.id)
+    .map(task => <TodoItem key={task.userId} todos={task}/>);
+
+  return (
+    <div className="table__user-performance">
+      <section className="user-info">
+        <div className="user-info_content">
+          <h2>
+            {props.user.name} <br />
+          </h2>
+
+          <i>Company:</i> <b>"{props.user.company.name}"</b>
+          <br />
+          
+          <span>
+            <i>Address:</i> {props.user.address.city},
+            <br />
+            {props.user.address.street}, {props.user.address.suite}. <br />
+            zipcode: {props.user.address.zipcode}
+          </span>
+          <br />
+          <br />
+          
+          <i>
+            username: <b>{props.user.username}</b>{" "}
+          </i>
+          <br />
+          
+          <i>e-mail:</i> <u>{props.user.email}</u>
+          <br />
+          
+          <i>phone:</i> {props.user.phone}
+          <br />
+          
+          <i>website: </i>
+          <a href="#"> www.{props.user.website}</a>
+
+        </div>
+      </section>
+
+      <section className="task-info">
+        {personatedTasks}
+      </section>
+    </div>
+  );};
 
 export default User;

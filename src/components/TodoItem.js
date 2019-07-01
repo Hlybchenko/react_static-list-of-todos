@@ -1,13 +1,18 @@
 import React from 'react';
 
 const TodoItem = props => (
-  <tr>
-    {/* <td>{props.todos.id}</td> */}
-    <td>user_id:-{props.todos.userId}</td>
-    <td>{props.todos.title}</td>
-    <td>{props.todos.completed ? "V" : "--"}</td>
-  </tr>
-);
+  <div className="todos">
+    <section className="task">
+      {props.todos.title}
+    </section>
 
+    <section className="status">{
+      props.todos.completed 
+        ? "DONE !!!" 
+        : "...in progres..."
+      }
+    </section>     
+  </div>
+);
 
 export default TodoItem;
