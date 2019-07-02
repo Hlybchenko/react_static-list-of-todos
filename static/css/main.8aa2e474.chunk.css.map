@@ -1,1 +1,0 @@
-{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA,MACE,mEACF,CAMA,MACE,wBACF","file":"main.8aa2e474.chunk.css","sourcesContent":["table {\n  background:  radial-gradient(farthest-corner at 50% 50%, white, #DCECF8);\n}\n\nth {\n  border: 1px solid #A9E2CC;\n}\n\ntd {\n  border: 1px solid #A9E2CC;\n}"]}
