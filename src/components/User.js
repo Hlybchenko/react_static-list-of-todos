@@ -1,8 +1,7 @@
 import React from 'react';
 
-import TodoItem from "./TodoItem";
-
-import todosData from "../data/todos";
+import TodoItem from './TodoItem';
+import todosData from '../data/todos';
 
 
 const User = props => {

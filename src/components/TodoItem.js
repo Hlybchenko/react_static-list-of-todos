@@ -11,7 +11,7 @@ const TodoItem = props => (
         ? "DONE !!!" 
         : "...in progres..."
       }
-    </section>     
+    </section>
   </div>
 );
 

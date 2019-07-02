@@ -1,7 +1,6 @@
 import React from 'react';
 
 import User from './User';
-
 import usersData from '../data/users';
 
 
