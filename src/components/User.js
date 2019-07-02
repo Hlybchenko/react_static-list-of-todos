@@ -57,6 +57,7 @@ const User = props => {
         {personatedTasks}
       </section>
     </div>
-  );};
+  );
+};
 
 export default User;

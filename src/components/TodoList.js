@@ -20,7 +20,7 @@ const TodoList = () => {
         {userComponents}
       </main>
     </div>
-  );
-}
+  )
+};
 
 export default TodoList;
