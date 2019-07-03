@@ -1,18 +1,18 @@
 import React from 'react';
 
 const TodoItem = props => (
-  <div className="todos">
-    <section className="task">
+  <section className="todos">
+    <div className="task">
       {props.todos.title}
-    </section>
+    </div>
 
-    <section className="status">{
+    <div className="status">{
       props.todos.completed 
         ? "DONE !!!" 
         : "...in progres..."
       }
-    </section>
-  </div>
+    </div>
+  </section>
 );
 
 export default TodoItem;
