@@ -6,9 +6,9 @@ import usersData from '../data/users';
 
 const TodoList = () => {
   
-  const userComponents = usersData.map(
-    user => <User key={user.id} user={user} />
-  );
+  const userComponents = usersData.map(user => (
+    <User key={user.id} user={user} />
+  ));
 
   return (
     <div >

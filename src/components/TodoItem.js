@@ -1,16 +1,23 @@
 import React from 'react';
 
-const TodoItem = props => (
+const TodoItem = ({ todos }) => (
   <section className="todos">
-    <div className="task">
-      {props.todos.title}
-    </div>
+    <div className="task">{todos.title}</div>
 
-    <div className="status">{
-      props.todos.completed 
-        ? "DONE !!!" 
-        : "...in progres..."
-      }
+    <div className="status">
+      {todos.completed ? (
+        <>
+          <label>
+            <input type="checkbox" checked />
+          </label>
+        </>
+      ) : (
+        <>
+          <label>
+            <input type="checkbox" />
+          </label>
+        </>
+      )}
     </div>
   </section>
 );
