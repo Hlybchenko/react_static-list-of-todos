@@ -4,35 +4,37 @@ import TodoItem from './TodoItem';
 import todosData from '../data/todos';
 
 
-const User = props => {
+const User = ({ user }) => {
   const personatedTasks = todosData
-    .map(task => <TodoItem key={task.id} todos={task} />)
-    .map(task => (task = task.props.todos)) 
-    .filter(task => task.userId === props.user.id)
-    .map(task => <TodoItem key={task.id} todos={task} />);
+    .filter(task => task.userId === user.id);
 
   return (
     <div className="table__user-performance">
       <div className="user-info">
         <div className="user-info_content">
-          <h2>
-            {props.user.name}
-          </h2>
-          <p>Company: "{props.user.company.name}"</p>
+          <h2>{user.name}</h2>
+          <p>Company: "{user.company.name}"</p>
           <span>
-            <p>Address: {props.user.address.city},</p>
-            <p>{props.user.address.street}, {props.user.address.suite}.</p>
-            zipcode: {props.user.address.zipcode}
+            <p>Address: {user.address.city},</p>
+            <p>
+              {user.address.street}, {user.address.suite}.
+            </p>
+            zipcode: {user.address.zipcode}
           </span>
-          <p>username: {props.user.username}</p>
-          <p>e-mail: {props.user.email}</p>
-          <p>phone: {props.user.phone}</p>
-          <p>website:
-          <a href=" "> www.{props.user.website}</a>
+          <p>username: {user.username}</p>
+          <p>e-mail: {user.email}</p>
+          <p>phone: {user.phone}</p>
+          <p>
+            website:
+            <a href=" "> www.{user.website}</a>
           </p>
         </div>
       </div>
-      <div className="task-info">{personatedTasks}</div>
+      <div className="task-info">
+        {personatedTasks.map(task => (
+          <TodoItem key={task.id} todos={task} />
+        ))}
+      </div>
     </div>
   );
 };

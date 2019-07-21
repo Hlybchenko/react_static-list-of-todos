@@ -4,22 +4,17 @@ import User from './User';
 import usersData from '../data/users';
 
 
-const TodoList = () => {
-  
-  const userComponents = usersData.map(user => (
-    <User key={user.id} user={user} />
-  ));
-
-  return (
-    <div >
+const TodoList = () => (
+    <div>
       <header className="header">
         <h1> List of TODOS </h1>
       </header>
       <main className="table">
-        {userComponents}
+        {usersData.map(user => (
+          <User key={user.id} user={user} />
+        ))}
       </main>
     </div>
-  )
-};
+  );
 
 export default TodoList;
